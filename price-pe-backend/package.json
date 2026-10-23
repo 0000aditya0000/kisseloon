@@ -1,0 +1,62 @@
+{
+  "name": "price-pe-backend",
+  "version": "1.0.0",
+  "description": "Backend for PricePe - Food & Grocery Price Comparison App",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
+    "build": "tsc && node -e \"require('fs').mkdirSync('dist/models',{recursive:true}); require('fs').copyFileSync('src/models/schema.sql','dist/models/schema.sql')\"",
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "db:setup": "ts-node --transpile-only scripts/setup-db.ts",
+    "test": "echo 'Tests coming soon'"
+  },
+  "keywords": [
+    "pricepe",
+    "price-comparison",
+    "food",
+    "grocery",
+    "mcp",
+    "express",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "axios": "^1.9.0",
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "fast-levenshtein": "^3.0.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.23.1",
+    "playwright": "^1.64.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/fast-levenshtein": "^0.0.4",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.15.21",
+    "@types/pg": "^8.23.1",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
